@@ -9,10 +9,14 @@ namespace CursoAspNetCore.Controllers
         public IActionResult Index()
         {
             var escuela = new Escuela();
-            escuela.AñoFundacion=2005;
+            escuela.AñoDeCreación=2005;
             escuela.Nombre="Platzi School";
-            escuela.EscuelaId=Guid.NewGuid().ToString();
-            
+            escuela.UniqueId=Guid.NewGuid().ToString();
+            escuela.Ciudad="San Salvador";
+            escuela.Pais="El Salvador";
+            escuela.TipoEscuela=TiposEscuela.Secundaria;
+            escuela.Dirección="Av. Siempre Peligrosa";
+
             ViewBag.CosaDinamica="La Monja";
             return View(escuela);
         }
