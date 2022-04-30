@@ -1,0 +1,30 @@
+@model List<Alumno>
+
+@{
+    ViewData["Title"]="Informacion Alumno";
+    Layout="Simple";
+}
+<h1>@ViewData["Title"] </h1>
+
+<b>Desde la vista Parcial</b>
+
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var alumno in @Model)
+    {
+        <tr>
+            <td>@alumno.UniqueId</td>
+            <td>@alumno.Nombre</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<p>@ViewBag.Fecha</p>
