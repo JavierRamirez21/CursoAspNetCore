@@ -6,68 +6,68 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CursoAspNetCore.Controllers
 {
-    public class AlumnoController:Controller
+    public class CursoController:Controller
     {
-        [Route("Alumno/Index")]
-        [Route("Alumno/Index/{Id}")]
+        [Route("Curso/Index")]
+        [Route("Curso/Index/{Id}")]
         public IActionResult Index(string Id)
         {
             if(!string.IsNullOrWhiteSpace(Id)){
-            var alumno= from asig in _context.Alumno
-                            where asig.Id==Id
-                            select asig;
-            return View(alumno.SingleOrDefault());
+            var curso= from cur in _context.Cursos
+                            where cur.Id==Id
+                            select cur;
+            return View(curso.SingleOrDefault());
             }else{
-                return View("MultiAlumno",_context.Alumno.ToList());
+                return View("MultiCurso",_context.Cursos.ToList());
             }
         }
-        public IActionResult MultiAlumno()
+        public IActionResult MultiCurso()
         {
-           /* var listaAlumno = new List<Alumno> () {
-                new Alumno {
+           /* var listaCurso = new List<Curso> () {
+                new Curso {
                 Nombre = "Javier Ramirez",
                 Id = Guid.NewGuid ().ToString ()
                 },
-                new Alumno {
+                new Curso {
                 Nombre = "Jose Garcia",
                 Id = Guid.NewGuid ().ToString ()
                 },
-                new Alumno {
+                new Curso {
                 Nombre = "Pablo Castillo",
                 Id = Guid.NewGuid ().ToString ()
                 },
-                new Alumno {
+                new Curso {
                 Nombre = "Ana Lopez",
                 Id = Guid.NewGuid ().ToString ()
                 },
-                new Alumno {
+                new Curso {
                 Nombre = "Sandra Jiminez",
                 Id = Guid.NewGuid ().ToString ()
                 }
             };*/
-            //var listaAlumno =GenerarAlumnosAlAzar();
+            //var listaCurso =GenerarCursosAlAzar();
 
             ViewBag.CosaDinamica="La Monja";
             ViewBag.Fecha=DateTime.Now;
-            return View("MultiAlumno",_context.Alumno.ToList());
+            return View("MultiCurso",_context.Cursos.ToList());
         }
 
-        private List<Alumno> GenerarAlumnosAlAzar()
+        private List<Curso> GenerarCursosAlAzar()
         {
             string[] nombre1 = { "Alba", "Felipa", "Eusebio", "Farid", "Donald", "Alvaro", "Nicolás" };
             string[] apellido1 = { "Ruiz", "Sarmiento", "Uribe", "Maduro", "Trump", "Toledo", "Herrera" };
             string[] nombre2 = { "Freddy", "Anabel", "Rick", "Murty", "Silvana", "Diomedes", "Nicomedes", "Teodoro" };
 
-            var listaAlumnos = from n1 in nombre1
+            var listaCursos = from n1 in nombre1
                                from n2 in nombre2
                                from a1 in apellido1
-                               select new Alumno { Nombre = $"{n1} {n2} {a1}", Id = Guid.NewGuid().ToString() };
+                               select new Curso { Nombre = $"{n1} {n2} {a1}", Id = Guid.NewGuid().ToString() };
 
-            return listaAlumnos.OrderBy((al) => al.Id).ToList();
+            return listaCursos.OrderBy((al) => al.Id).ToList();
         }
 
         private EscuelaContext _context;
-        public AlumnoController(EscuelaContext context)
+        public CursoController(EscuelaContext context)
         {
             _context=context;
         }
