@@ -1,0 +1,22 @@
+@*
+@model List<ObjetoEscuelaBase>
+*@
+
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var alumno in @Model)
+    {
+        <tr>
+            <td>@alumno.Id</td>
+            <td>@alumno.Nombre</td>
+        </tr>
+    }
+    </tbody>
+</table>
