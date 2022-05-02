@@ -8,6 +8,8 @@
     <tr>
         <th scope="col">Id</th>
         <th scope="col">Nombre</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
     </tr>
     </thead>
     <tbody>
@@ -16,6 +18,10 @@
         <tr>
             <td>@alumno.Id</td>
             <td>@alumno.Nombre</td>
+            <td>
+            <a asp-action="Update" asp-route-id="@alumno.Id" class="btn btn-success">Edit</a></td>
+            <td><a asp-action="Delete" asp-route-id="@alumno.Id" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
     }
     </tbody>

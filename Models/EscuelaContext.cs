@@ -91,11 +91,12 @@ namespace CursoAspNetCore.Models
                             Id = Guid.NewGuid().ToString(),
                             EscuelaId = escuela.Id,
                             Nombre = "101",
+                            Dirección="Av. Siempre peligrosa",
                             Jornada = TiposJornada.Mañana },
-                        new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "201", Jornada = TiposJornada.Mañana},
-                        new Curso   {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "301", Jornada = TiposJornada.Mañana},
-                        new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "401", Jornada = TiposJornada.Tarde },
-                        new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "501", Jornada = TiposJornada.Tarde},
+                        new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "201",Dirección="Av. Siempre peligrosa", Jornada = TiposJornada.Mañana},
+                        new Curso   {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "301",Dirección="Av. Siempre peligrosa", Jornada = TiposJornada.Mañana},
+                        new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "401",Dirección="Av. Siempre peligrosa", Jornada = TiposJornada.Tarde },
+                        new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "501",Dirección="Av. Siempre peligrosa", Jornada = TiposJornada.Tarde},
             };
         }
 

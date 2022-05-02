@@ -1,0 +1,24 @@
+@model Curso
+
+@{
+    ViewData["Title"] = "Información Curso";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="container">
+    <h3>Esta seguro que desea eliminar el Alumno?</h3>
+    <div asp-validation-summary="All"></div>
+    <form class="form" method="POST">
+        <div class="form-group">
+            <label asp-for="Id"></label>    
+            <input class="form-control" asp-for="Id" disabled/>
+        </div>
+        <div class="form-group">
+            <label asp-for="Nombre"></label>    
+            <input class="form-control" asp-for="Nombre" />
+        </div>
+        <input class="btn btn-danger" value="Eliminar" type="submit" />
+        <a class="btn btn-success" asp-action="Index"  class="btn btn-primary">Volver al index</a>
+
+    </form>
+</div>

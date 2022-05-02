@@ -5,9 +5,11 @@
     Layout="Simple";
 }
 <h1>@ViewData["Title"] </h1>
+<p>
 
-<b>Desde la vista Parcial</b>
-
+    <b>Desde la vista Parcial</b>
+</p>
+<a class="btn btn-success" asp-action="Create"  class="btn btn-primary">Crear nuevo registro</a>
 <partial name="ListaObjetoEscuela" />
 
 <p>@ViewBag.Fecha</p>
